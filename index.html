@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feliz Aniversário Kemilly 🎉</title>
 
-  <!-- FONTES BONITAS -->
+  <!-- FONTES -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="estilo.css">
@@ -17,32 +17,53 @@
     <h1>🎉 Feliz Aniversário, Kemilly! 🎉</h1>
 
     <p class="mensagem">
-      Mesmo com suas zoeiras e momentos meio doidos 😂  
-      você consegue ser alguém que ilumina tudo ao redor.
+      Hoje é um dia especial… 🎂✨  
+      Não é só mais um aniversário, é o dia de comemorar alguém que realmente faz diferença!
 
-      Que seu dia seja cheio de risadas, momentos bons e muita felicidade 💖  
-      e que nunca falte motivo pra sorrir.
+      Entre zoeiras, risadas e aqueles momentos totalmente aleatórios 😂  
+      você consegue ser uma pessoa incrível do seu próprio jeito.
 
-      Você merece tudo de melhor hoje e sempre!
+      Seu jeito, sua energia e sua presença fazem tudo ficar mais leve e mais divertido.  
+
+      Que hoje não falte risada, momentos bons e muita felicidade 💖  
+      porque você merece tudo isso e muito mais.
+
+      Continua sendo essa pessoa única, doida (no bom sentido 😆) e especial.
+
+      Feliz aniversário 🎉🎁
     </p>
 
-    <button onclick="mostrarFoto()">Clique para surpresa 🎁</button>
+    <!-- BOTÃO -->
+    <button onclick="surpresa()">Clique para surpresa 🎁</button>
 
-    <img id="foto" src="Kemilly.jpg" alt="Foto" class="hidden">
+    <!-- TEXTO SURPRESA -->
+    <p class="surpresa" id="textoSurpresa">
+      felicidades sempre 💖🎉
+    </p>
+
+    <!-- FOTO -->
+    <img id="foto" src="Kemilly.jpg" alt="Foto da Kemilly">
+
   </div>
 
+  <!-- SCRIPT -->
   <script>
-    function mostrarFoto() {
+    function surpresa() {
       document.getElementById("foto").classList.add("mostrar");
+      document.getElementById("textoSurpresa").classList.add("ativo");
 
-      for (let i = 0; i < 40; i++) {
-        let emoji = document.createElement("div");
-        emoji.classList.add("emoji");
-        emoji.innerHTML = ["🎉","🎂","🎁","✨"][Math.floor(Math.random()*4)];
-        emoji.style.left = Math.random() * 100 + "vw";
-        document.body.appendChild(emoji);
+      for (let i = 0; i < 50; i++) {
+        let p = document.createElement("div");
+        p.classList.add("particula");
 
-        setTimeout(() => emoji.remove(), 4000);
+        const emojis = ["🎉","🎂","🎁","✨"];
+        p.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+
+        p.style.left = Math.random() * 100 + "vw";
+
+        document.body.appendChild(p);
+
+        setTimeout(() => p.remove(), 5000);
       }
     }
   </script>
