@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário Kemilly 🎉</title>
+
+  <!-- FONTES BONITAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🎉 Feliz Aniversário, Kemilly! 🎉</h1>
+
+    <p class="mensagem">
+      Mesmo com suas zoeiras e momentos meio doidos 😂  
+      você consegue ser alguém que ilumina tudo ao redor.
+
+      Que seu dia seja cheio de risadas, momentos bons e muita felicidade 💖  
+      e que nunca falte motivo pra sorrir.
+
+      Você merece tudo de melhor hoje e sempre!
+    </p>
+
+    <button onclick="mostrarFoto()">Clique para surpresa 🎁</button>
+
+    <img id="foto" src="Kemilly.jpg" alt="Foto" class="hidden">
+  </div>
+
+  <script>
+    function mostrarFoto() {
+      document.getElementById("foto").classList.add("mostrar");
+
+      for (let i = 0; i < 40; i++) {
+        let emoji = document.createElement("div");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = ["🎉","🎂","🎁","✨"][Math.floor(Math.random()*4)];
+        emoji.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(emoji);
+
+        setTimeout(() => emoji.remove(), 4000);
+      }
+    }
+  </script>
+
+</body>
+</html>
