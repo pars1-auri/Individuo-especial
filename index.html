@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feliz Aniversário Kemilly 🎉</title>
+  <title>Surpresa 🎁</title>
 
-  <!-- FONTES -->
+  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="estilo.css">
@@ -13,50 +13,62 @@
 
 <body>
 
-  <div class="container">
+  <!-- 🎵 Música -->
+  <audio id="musica" loop>
+    <source src="serenata-do-rio.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 🎁 Tela inicial -->
+  <div class="tela-inicial" id="inicio">
+    <h1>🎁 Você recebeu um presente</h1>
+    <button onclick="abrirPresente()">Abrir 🎉</button>
+  </div>
+
+  <!-- 💖 Conteúdo -->
+  <div class="container escondido" id="conteudo">
     <h1>🎉 Feliz Aniversário, Kemilly! 🎉</h1>
 
     <p class="mensagem">
       Hoje é um dia especial… 🎂✨  
-      Não é só mais um aniversário, é o dia de comemorar alguém que realmente faz diferença!
+      Não é só mais um aniversário, é o dia de comemorar alguém incrível!
 
-      Entre zoeiras, risadas e aqueles momentos totalmente aleatórios 😂  
-      você consegue ser uma pessoa incrível do seu próprio jeito.
+      Entre zoeiras e risadas 😂  
+      você consegue ser única do seu jeito.
 
-      Seu jeito, sua energia e sua presença fazem tudo ficar mais leve e mais divertido.  
+      Que nunca falte felicidade, momentos bons e motivos pra sorrir 💖  
 
-      Que hoje não falte risada, momentos bons e muita felicidade 💖  
-      porque você merece tudo isso e muito mais.
-
-      Continua sendo essa pessoa única, doida (no bom sentido 😆) e especial.
+      Você merece tudo de melhor hoje e sempre!
 
       Feliz aniversário 🎉🎁
     </p>
 
-    <!-- BOTÃO -->
-    <button onclick="surpresa()">Clique para surpresa 🎁</button>
+    <button onclick="surpresa()">Ver surpresa 👀</button>
 
-    <!-- TEXTO SURPRESA -->
     <p class="surpresa" id="textoSurpresa">
-      felicidades sempre 💖🎉
+      💖 felicidades sempre 💖
     </p>
 
-    <!-- FOTO -->
     <img id="foto" src="Kemilly.jpg" alt="Foto da Kemilly">
-
   </div>
 
-  <!-- SCRIPT -->
+  <!-- 🚀 Script -->
   <script>
+    function abrirPresente() {
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("conteudo").classList.remove("escondido");
+
+      document.getElementById("musica").play();
+    }
+
     function surpresa() {
       document.getElementById("foto").classList.add("mostrar");
       document.getElementById("textoSurpresa").classList.add("ativo");
 
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 80; i++) {
         let p = document.createElement("div");
         p.classList.add("particula");
 
-        const emojis = ["🎉","🎂","🎁","✨"];
+        const emojis = ["🎉","🎂","🎁","✨","💖"];
         p.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
 
         p.style.left = Math.random() * 100 + "vw";
